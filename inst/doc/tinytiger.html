@@ -356,70 +356,54 @@ website</a>.</p>
 geography. All functions are prefixed with <code>tt_</code>.</p>
 <p>For counties, for example, we can run:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">tt_counties</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(counties)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Simple feature collection with 6 features and 17 fields</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Dimension:     XY</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Bounding box:  xmin: -123.7283 ymin: 18.11774 xmax: -65.81565 ymax: 46.38562</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Geodetic CRS:  NAD83</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 18</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   STATEFP COUNTYFP COUNTYNS GEOID NAME  NAMEL…¹ LSAD  CLASSFP MTFCC CSAFP CBSAFP</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; </span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 31      039      00835841 31039 Cumi… Cuming… 06    H1      G4020 &lt;NA&gt;  &lt;NA&gt;  </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 53      069      01513275 53069 Wahk… Wahkia… 06    H1      G4020 &lt;NA&gt;  &lt;NA&gt;  </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 35      011      00933054 35011 De B… De Bac… 06    H1      G4020 &lt;NA&gt;  &lt;NA&gt;  </span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 31      109      00835876 31109 Lanc… Lancas… 06    H1      G4020 339   30700 </span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 31      129      00835886 31129 Nuck… Nuckol… 06    H1      G4020 &lt;NA&gt;  &lt;NA&gt;  </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 72      085      01804523 72085 Las … Las Pi… 13    H1      G4020 490   41980 </span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 7 more variables: METDIVFP &lt;chr&gt;, FUNCSTAT &lt;chr&gt;, ALAND &lt;dbl&gt;,</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   AWATER &lt;dbl&gt;, INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;, geometry &lt;MULTIPOLYGON [°]&gt;,</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   and abbreviated variable name ¹​NAMELSAD</span></span></code></pre></div>
+<pre><code>#&gt; Error in curl::curl_download(url, path, quiet = quiet) : HTTP error 304.</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(counties)</span></code></pre></div>
 <p>Other options for downloads are:</p>
 <ul>
-<li>[tt_address_ranges()]</li>
-<li>[tt_ai_an_nh_areas()]</li>
-<li>[tt_anrc()]</li>
-<li>[tt_area_landmarks()]</li>
-<li>[tt_area_water()]</li>
-<li>[tt_block_groups()]</li>
-<li>[tt_blocks()]</li>
-<li>[tt_cbsa()]</li>
-<li>[tt_coastline()]</li>
-<li>[tt_congressional_districts()]</li>
-<li>[tt_consolidated_cities()]</li>
-<li>[tt_counties()]</li>
-<li>[tt_county_subdivisions()]</li>
-<li>[tt_csa()]</li>
-<li>[tt_elementary_school_districts()]</li>
-<li>[tt_estates()]</li>
-<li>[tt_linear_water()]</li>
-<li>[tt_metropolitan_divisions()]</li>
-<li>[tt_military()]</li>
-<li>[tt_new_england_cities()]</li>
-<li>[tt_new_england_city_divisions()]</li>
-<li>[tt_new_england_combined_areas()]</li>
-<li>[tt_places()]</li>
-<li>[tt_point_landmarks()]</li>
-<li>[tt_polygon_edges()]</li>
-<li>[tt_polygon_faces()]</li>
-<li>[tt_primary_roads()]</li>
-<li>[tt_primary_secondary_roads()]</li>
-<li>[tt_puma()]</li>
-<li>[tt_rails()]</li>
-<li>[tt_roads()]</li>
-<li>[tt_secondary_school_districts()]</li>
-<li>[tt_state_leg_lower()]</li>
-<li>[tt_state_leg_upper()]</li>
-<li>[tt_states()]</li>
-<li>[tt_subbarrios()]</li>
-<li>[tt_tracts()]</li>
-<li>[tt_tribal_block_groups()]</li>
-<li>[tt_tribal_subdivisions()]</li>
-<li>[tt_tribal_tracts()]</li>
-<li>[tt_uac()]</li>
-<li>[tt_unified_school_districts()]</li>
-<li>[tt_voting_districts()]</li>
-<li>[tt_zcta()]</li>
+<li><code>tt_address_ranges()</code></li>
+<li><code>tt_ai_an_nh_areas()</code></li>
+<li><code>tt_anrc()</code></li>
+<li><code>tt_area_landmarks()</code></li>
+<li><code>tt_area_water()</code></li>
+<li><code>tt_block_groups()</code></li>
+<li><code>tt_blocks()</code></li>
+<li><code>tt_cbsa()</code></li>
+<li><code>tt_coastline()</code></li>
+<li><code>tt_congressional_districts()</code></li>
+<li><code>tt_consolidated_cities()</code></li>
+<li><code>tt_counties()</code></li>
+<li><code>tt_county_subdivisions()</code></li>
+<li><code>tt_csa()</code></li>
+<li><code>tt_elementary_school_districts()</code></li>
+<li><code>tt_estates()</code></li>
+<li><code>tt_linear_water()</code></li>
+<li><code>tt_metropolitan_divisions()</code></li>
+<li><code>tt_military()</code></li>
+<li><code>tt_new_england_cities()</code></li>
+<li><code>tt_new_england_city_divisions()</code></li>
+<li><code>tt_new_england_combined_areas()</code></li>
+<li><code>tt_places()</code></li>
+<li><code>tt_point_landmarks()</code></li>
+<li><code>tt_polygon_edges()</code></li>
+<li><code>tt_polygon_faces()</code></li>
+<li><code>tt_primary_roads()</code></li>
+<li><code>tt_primary_secondary_roads()</code></li>
+<li><code>tt_puma()</code></li>
+<li><code>tt_rails()</code></li>
+<li><code>tt_roads()</code></li>
+<li><code>tt_secondary_school_districts()</code></li>
+<li><code>tt_state_leg_lower()</code></li>
+<li><code>tt_state_leg_upper()</code></li>
+<li><code>tt_states()</code></li>
+<li><code>tt_subbarrios()</code></li>
+<li><code>tt_tracts()</code></li>
+<li><code>tt_tribal_block_groups()</code></li>
+<li><code>tt_tribal_subdivisions()</code></li>
+<li><code>tt_tribal_tracts()</code></li>
+<li><code>tt_uac()</code></li>
+<li><code>tt_unified_school_districts()</code></li>
+<li><code>tt_voting_districts()</code></li>
+<li><code>tt_zcta()</code></li>
 </ul>
 </div>
 

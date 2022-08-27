@@ -17,5 +17,5 @@ try(counties <- tt_counties())
 dl_success <- !is.null(counties)
 
 ## ---- eval = dl_success-------------------------------------------------------
-head(counties)
+#  head(counties)
 
