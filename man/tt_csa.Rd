@@ -7,7 +7,7 @@
 tt_csa(year = 2021)
 }
 \arguments{
-\item{year}{Integer year. Required. 2000 and 2010-2021 are currently supported.}
+\item{year}{Integer year. Required. 2000 and 2010-2022 are currently supported.}
 }
 \value{
 sf data.frame
@@ -17,7 +17,6 @@ Download TIGER shapes for Combined Statistical Area
 }
 \examples{
 # Wrapped in try due to false positive 304 errors
-try(tt_csa())
-
+\donttest{try(tt_csa())}
 }
 \concept{other}

@@ -12,8 +12,8 @@
 #'
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
-#' try(tt_tracts(state = "DE", county = "001"))
-tt_tracts <- function(state, county, year = 2021) {
+#' \donttest{try(tt_tracts(state = "DE", county = "001"))} # downloads slow on CRAN
+tt_tracts <- function(state, county, year = 2022) {
 
   years_okay(year)
 

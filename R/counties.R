@@ -12,9 +12,9 @@
 #' @examples
 #' \donttest{ # takes > 5 seconds
 #' # Wrapped in try due to false positive 304 errors
-#' try(tt_counties(state = "DE"))
+#' \donttest{try(tt_counties(state = "DE"))} # downloads slow on CRAN
 #' }
-tt_counties <- function(state, year = 2021) {
+tt_counties <- function(state, year = 2022) {
 
   years_okay(year)
 

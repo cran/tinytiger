@@ -11,8 +11,8 @@
 #'
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
-#' try(tt_places("DE"))
-tt_places <- function(state, year = 2021) {
+#' \donttest{try(tt_places("DE"))} # downloads slow on CRAN
+tt_places <- function(state, year = 2022) {
 
   years_okay(year)
 

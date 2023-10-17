@@ -4,10 +4,10 @@
 \alias{tt_tribal_block_groups}
 \title{Download TIGER shapes for Tribal Block Groups}
 \usage{
-tt_tribal_block_groups(year = 2021)
+tt_tribal_block_groups(year = 2022)
 }
 \arguments{
-\item{year}{Integer year. Required. 2000 and 2010-2021 are currently supported.}
+\item{year}{Integer year. Required. 2000 and 2010-2022 are currently supported.}
 }
 \value{
 sf data.frame
@@ -17,6 +17,6 @@ Download TIGER shapes for Tribal Block Groups
 }
 \examples{
 # Wrapped in try due to false positive 304 errors
-try(tt_tribal_block_groups())
+\donttest{try(tt_tribal_block_groups())}
 }
 \concept{tribal}

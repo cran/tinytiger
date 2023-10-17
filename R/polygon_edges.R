@@ -12,10 +12,10 @@
 #'
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
-#' try(tt_polygon_edges("DE", county = "001"))
-tt_polygon_edges <- function(state, county, year = 2021) {
+#' \donttest{try(tt_polygon_edges("DE", county = "001"))} # downloads slow on CRAN
+tt_polygon_edges <- function(state, county, year = 2022) {
 
-  years_okay(year, 2010:2021)
+  years_okay(year, 2010:2022)
 
   if (missing(state)) {
     cli::cli_abort("{.arg state} is required for {.fn tt_roads}.")

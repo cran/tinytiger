@@ -7,7 +7,7 @@
 tt_metropolitan_divisions(year = 2021)
 }
 \arguments{
-\item{year}{Integer year. Required. 2000 and 2010-2021 are currently supported.}
+\item{year}{Integer year. Required. 2000 and 2010-2022 are currently supported.}
 }
 \value{
 sf data.frame
@@ -17,6 +17,6 @@ Download TIGER shapes for Metropolitan Divisions
 }
 \examples{
 # Wrapped in try due to false positive 304 errors
-try(tt_metropolitan_divisions())
+\donttest{try(tt_metropolitan_divisions())} # downloads slow on CRAN
 }
 \concept{other}

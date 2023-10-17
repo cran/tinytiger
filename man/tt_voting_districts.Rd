@@ -4,14 +4,14 @@
 \alias{tt_voting_districts}
 \title{Download TIGER shapes for Voting Districts}
 \usage{
-tt_voting_districts(state, county, year = 2021)
+tt_voting_districts(state, county, year = 2022)
 }
 \arguments{
 \item{state}{FIPS, postal codes, or full names of states.}
 
 \item{county}{FIPS codes or full names of counties. Optional.}
 
-\item{year}{Integer year. Required. 2000 and 2010-2021 are currently supported.}
+\item{year}{Integer year. Required. 2000 and 2010-2022 are currently supported.}
 }
 \value{
 sf data.frame
@@ -21,6 +21,6 @@ Download TIGER shapes for Voting Districts
 }
 \examples{
 # Wrapped in try due to false positive 304 errors
-try(tt_voting_districts("DE", county = "001"))
+\donttest{try(tt_voting_districts("DE", county = "001"))} # downloads slow on CRAN
 }
 \concept{districts}

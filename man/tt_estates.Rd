@@ -4,10 +4,10 @@
 \alias{tt_estates}
 \title{Download TIGER shapes for Estates (US Virgin Islands)}
 \usage{
-tt_estates(year = 2021)
+tt_estates(year = 2022)
 }
 \arguments{
-\item{year}{Integer year. Required. 2000 and 2010-2021 are currently supported.}
+\item{year}{Integer year. Required. 2000 and 2010-2022 are currently supported.}
 }
 \value{
 sf data.frame
@@ -17,6 +17,6 @@ Download TIGER shapes for Estates (US Virgin Islands)
 }
 \examples{
 # Wrapped in try due to false positive 304 errors
-try(tt_estates())
+\donttest{try(tt_estates())} # downloads slow on CRAN
 }
 \concept{other}

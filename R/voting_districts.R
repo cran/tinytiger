@@ -12,11 +12,11 @@
 #'
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
-#' try(tt_voting_districts("DE", county = "001"))
-tt_voting_districts <- function(state, county, year = 2021) {
+#' \donttest{try(tt_voting_districts("DE", county = "001"))} # downloads slow on CRAN
+tt_voting_districts <- function(state, county, year = 2022) {
 
   year <- year - (year %% 10)
-  cli::cli_inform("Downloading congressional districts for decade {.val {year}}.")
+  cli::cli_inform("Downloading voting districts for decade {.val {year}}.")
   dec_yr <- pad_str(year %% 2000)
 
   if (missing(state)) {
@@ -34,6 +34,12 @@ tt_voting_districts <- function(state, county, year = 2021) {
       county <- NULL
     } else {
       county <- county_lookup_all(state)
+      if (state == "02") {
+        county <- c("013", "016", "020", "050", "060", "068", "070", "090", "100",
+                    "105", "110", "122", "130", "150", "164", "170", "180", "185",
+                    "188", "195", "198", "220", "230", "240", "261", "270", "275",
+                    "282", "290")
+      }
     }
   }
 
