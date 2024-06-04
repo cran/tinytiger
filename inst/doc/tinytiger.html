@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -363,23 +363,32 @@ geography. All functions are prefixed with <code>tt_</code>.</p>
 <p>For counties, for example, we can run:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>counties <span class="ot">&lt;-</span> <span class="fu">tt_counties</span>()</span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">head</span>(counties)</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; Simple feature collection with 6 features and 17 fields</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; Simple feature collection with 6 features and 18 fields</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; Dimension:     XY</span></span>
 <span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; Bounding box:  xmin: -123.7283 ymin: 18.11774 xmax: -65.81565 ymax: 46.38562</span></span>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; Geodetic CRS:  NAD83</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 18</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt;   STATEFP COUNTYFP COUNTYNS GEOID NAME        NAMELSAD LSAD  CLASSFP MTFCC CSAFP</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 1 31      039      00835841 31039 Cuming      Cuming … 06    H1      G4020 &lt;NA&gt; </span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 2 53      069      01513275 53069 Wahkiakum   Wahkiak… 06    H1      G4020 &lt;NA&gt; </span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 3 35      011      00933054 35011 De Baca     De Baca… 06    H1      G4020 &lt;NA&gt; </span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 4 31      109      00835876 31109 Lancaster   Lancast… 06    H1      G4020 &lt;NA&gt; </span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 5 31      129      00835886 31129 Nuckolls    Nuckoll… 06    H1      G4020 &lt;NA&gt; </span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 6 72      085      01804523 72085 Las Piedras Las Pie… 13    H1      G4020 &lt;NA&gt; </span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 8 more variables: CBSAFP &lt;chr&gt;, METDIVFP &lt;chr&gt;, FUNCSTAT &lt;chr&gt;,</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; #   ALAND &lt;dbl&gt;, AWATER &lt;dbl&gt;, INTPTLAT &lt;chr&gt;, INTPTLON &lt;chr&gt;,</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; #   geometry &lt;MULTIPOLYGON [°]&gt;</span></span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;   STATEFP COUNTYFP COUNTYNS GEOID        GEOIDFQ        NAME</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 1      31      039 00835841 31039 0500000US31039      Cuming</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 2      53      069 01513275 53069 0500000US53069   Wahkiakum</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 3      35      011 00933054 35011 0500000US35011     De Baca</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 4      31      109 00835876 31109 0500000US31109   Lancaster</span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 5      31      129 00835886 31129 0500000US31129    Nuckolls</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 6      72      085 01804523 72085 0500000US72085 Las Piedras</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;                NAMELSAD LSAD CLASSFP MTFCC CSAFP CBSAFP METDIVFP FUNCSTAT</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 1         Cuming County   06      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 2      Wahkiakum County   06      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 3        De Baca County   06      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 4      Lancaster County   06      H1 G4020   339  30700     &lt;NA&gt;        A</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 5       Nuckolls County   06      H1 G4020  &lt;NA&gt;   &lt;NA&gt;     &lt;NA&gt;        A</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 6 Las Piedras Municipio   13      H1 G4020   490  41980     &lt;NA&gt;        A</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">#&gt;        ALAND   AWATER    INTPTLAT     INTPTLON                       geometry</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co">#&gt; 1 1477563029 10772508 +41.9158651 -096.7885168 MULTIPOLYGON (((-96.55515 4...</span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="co">#&gt; 2  680980771 61564427 +46.2946377 -123.4244583 MULTIPOLYGON (((-123.7276 4...</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt; 3 6016818946 29090018 +34.3592729 -104.3686961 MULTIPOLYGON (((-104.8934 3...</span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 4 2169269688 22850324 +40.7835474 -096.6886584 MULTIPOLYGON (((-96.68493 4...</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 5 1489645187  1718484 +40.1764918 -098.0468422 MULTIPOLYGON (((-98.2737 40...</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 6   87748419    32509 +18.1871483 -065.8711890 MULTIPOLYGON (((-65.85703 1...</span></span></code></pre></div>
 <p>Other options for downloads are:</p>
 <ul>
 <li><code>tt_address_ranges()</code></li>
