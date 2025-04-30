@@ -8,7 +8,7 @@ knitr::opts_chunk$set(
 library(tinytiger)
 
 ## ----eval = FALSE-------------------------------------------------------------
-#  counties <- tt_counties()
+# counties <- tt_counties()
 
 ## ----echo = FALSE-------------------------------------------------------------
 # depends on (1) internet and (2) successful download

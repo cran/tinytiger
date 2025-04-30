@@ -1,6 +1,6 @@
 Package: tinytiger
 Title: Lightweight Interface to TIGER/Line Shapefiles
-Version: 0.0.9
+Version: 0.0.10
 Authors@R: c(
     person("Christopher T.", "Kenny", email = "christopherkenny@fas.harvard.edu", 
     role = c("aut", "cre"), comment = c(ORCID = "0000-0002-9386-6860")),
@@ -15,7 +15,7 @@ Depends: R (>= 2.10)
 Imports: cli, glue, curl, sf
 Suggests: knitr, rappdirs, rmarkdown, testthat (>= 3.0.0)
 Encoding: UTF-8
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 LazyData: true
 URL: https://github.com/alarm-redist/tinytiger,
         https://alarm-redist.org/tinytiger/
@@ -23,10 +23,10 @@ BugReports: https://github.com/alarm-redist/tinytiger/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-06-03 22:31:33 UTC; chris
+Packaged: 2025-04-30 00:52:23 UTC; chris
 Author: Christopher T. Kenny [aut, cre]
     (<https://orcid.org/0000-0002-9386-6860>),
   Cory McCartan [aut]
 Maintainer: Christopher T. Kenny <christopherkenny@fas.harvard.edu>
 Repository: CRAN
-Date/Publication: 2024-06-04 14:40:02 UTC
+Date/Publication: 2025-04-30 02:30:01 UTC
