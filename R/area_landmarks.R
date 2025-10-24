@@ -1,8 +1,8 @@
 #' Download TIGER shapes for Area Landmarks
 #'
-#' @templateVar state TRUE
-#' @templateVar year TRUE
-#' @template template
+#' @param state `r template_var_state()`
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -12,9 +12,9 @@
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_area_landmarks("DE"))} # downloads slow on CRAN
-tt_area_landmarks <- function(state, year = 2024) {
+tt_area_landmarks <- function(state, year = 2025) {
 
-  years_okay(year, 2010:2024)
+  years_okay(year, 2010:2025)
 
   if (missing(state)) {
     cli::cli_abort("{.arg state} is required for {.fn tt_area_landmarks}.")

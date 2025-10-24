@@ -1,7 +1,7 @@
 #' Download TIGER shapes for Alaska Native Regional Corporation (Alaska)
 #'
-#' @templateVar year TRUE
-#' @template template
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -11,7 +11,7 @@
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_anrc())} # downloads slow on CRAN
-tt_anrc <- function(year = 2024) {
+tt_anrc <- function(year = 2025) {
 
   years_okay(year)
 

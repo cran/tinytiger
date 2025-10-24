@@ -1,7 +1,7 @@
 #' Download TIGER shapes for Zip Code Tabulation Areas
 #'
-#' @templateVar year TRUE
-#' @template template
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -13,9 +13,9 @@
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_zcta())} # downloads slow on CRAN
 #' }
-tt_zcta <- function(year = 2024) {
+tt_zcta <- function(year = 2025) {
 
-  years_okay(year, c(2000, 2010, 2012:2024))
+  years_okay(year, c(2000, 2010, 2012:2025))
 
   dec_yr <- pad_str(year %% 2000 - (year %% 10))
   url_adj <- ""

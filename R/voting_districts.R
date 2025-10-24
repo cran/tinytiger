@@ -1,9 +1,9 @@
 #' Download TIGER shapes for Voting Districts
 #'
-#' @templateVar state TRUE
-#' @templateVar county TRUE
-#' @templateVar year TRUE
-#' @template template
+#' @param state `r template_var_state()`
+#' @param county `r template_var_county()`
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -13,7 +13,7 @@
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_voting_districts("DE", county = "001"))} # downloads slow on CRAN
-tt_voting_districts <- function(state, county, year = 2024) {
+tt_voting_districts <- function(state, county, year = 2025) {
 
   year <- year - (year %% 10)
   cli::cli_inform("Downloading voting districts for decade {.val {year}}.")

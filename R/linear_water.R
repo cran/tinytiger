@@ -1,9 +1,9 @@
 #' Download TIGER Shapes for Linear Water
 #'
-#' @templateVar state TRUE
-#' @templateVar county TRUE
-#' @templateVar year TRUE
-#' @template template
+#' @param state `r template_var_state()`
+#' @param county `r template_var_county()`
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -13,9 +13,9 @@
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_linear_water("DE"))} # downloads slow on CRAN
-tt_linear_water <- function(state, county, year = 2024) {
+tt_linear_water <- function(state, county, year = 2025) {
 
-  years_okay(year, 2010:2024)
+  years_okay(year, 2010:2025)
 
   if (missing(state)) {
     cli::cli_abort("{.arg state} is required for {.fn tt_linear_water}.")

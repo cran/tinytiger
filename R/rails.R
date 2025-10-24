@@ -1,7 +1,7 @@
 #' Download TIGER shapes for Rails
 #'
-#' @templateVar year TRUE
-#' @template template
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -13,9 +13,9 @@
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_rails())} # downloads slow on CRAN
 #' }
-tt_rails <- function(year = 2024) {
+tt_rails <- function(year = 2025) {
 
-  years_okay(year, 2010:2024)
+  years_okay(year, 2010:2025)
 
   zip_url <- glue::glue("{base_url(year)}/RAILS/tl_{year}_us_rails.zip")
   target <- glue::glue("tl_{year}_us_rails.shp")

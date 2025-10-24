@@ -1,8 +1,8 @@
 #' Download TIGER shapes for Elementary School Districts
 #'
-#' @templateVar state TRUE
-#' @templateVar year TRUE
-#' @template template
+#' @param state `r template_var_state()`
+#' @param year `r template_var_year()`
+#' 
 #'
 #' @return sf data.frame
 #' @export
@@ -12,7 +12,7 @@
 #' @examples
 #' # Wrapped in try due to false positive 304 errors
 #' \donttest{try(tt_elementary_school_districts("AZ"))} # downloads slow on CRAN
-tt_elementary_school_districts <- function(state, year = 2024) {
+tt_elementary_school_districts <- function(state, year = 2025) {
 
   years_okay(year)
 
